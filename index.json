@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-07T04:00:00Z",
+  "plugins": [
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "version": "0.1.0",
+      "type": "lua",
+      "author": "kh813",
+      "description": "Convert words and text selections between camelCase, snake_case, kebab-case, and CONSTANT_CASE.",
+      "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/case-converter",
+      "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/case-converter",
+      "languages": ["*"],
+      "capabilities": {
+        "outline_provider": false,
+        "commands": [
+          "to_camel_case",
+          "to_snake_case",
+          "to_kebab_case",
+          "to_constant_case"
+        ]
+      }
+    },
+    {
+      "id": "lorem-ipsum",
+      "name": "Lorem Ipsum Generator",
+      "version": "0.1.0",
+      "type": "lua",
+      "author": "kh813",
+      "description": "Quickly insert placeholder sentences or paragraphs into your active document.",
+      "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/lorem-ipsum",
+      "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/lorem-ipsum",
+      "languages": ["*"],
+      "capabilities": {
+        "outline_provider": false,
+        "commands": [
+          "lorem_sentence",
+          "lorem_paragraph",
+          "lorem_paragraphs_3"
+        ]
+      }
+    },
+    {
+      "id": "markdown-toc",
+      "name": "Markdown Table of Contents",
+      "version": "0.1.0",
+      "type": "lua",
+      "author": "kh813",
+      "description": "Automatically generates and inserts an indented Table of Contents from Markdown headings (# to ######).",
+      "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/markdown-toc",
+      "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/markdown-toc",
+      "languages": ["markdown", "md"],
+      "capabilities": {
+        "outline_provider": false,
+        "commands": [
+          "generate_toc"
+        ]
+      }
+    },
+    {
+      "id": "text-tools",
+      "name": "Standard Text Tools",
+      "version": "0.1.9",
+      "type": "wasm",
+      "author": "kh813",
+      "description": "High-performance text utilities, line sorting, and JSON formatting & minifying compiled to WebAssembly.",
+      "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/text-tools",
+      "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/text-tools",
+      "languages": ["markdown", "md", "json", "txt"],
+      "capabilities": {
+        "outline_provider": true,
+        "commands": [
+          "format_json",
+          "minify_json",
+          "sort_lines",
+          "reverse_lines",
+          "to_uppercase",
+          "to_lowercase"
+        ]
+      }
+    }
+  ]
+}

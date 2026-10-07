@@ -1,0 +1,16 @@
+id = "lorem-ipsum"
+name = "Lorem Ipsum Generator"
+version = "0.1.0"
+type = "lua"
+entry = "init.lua"
+author = "kh813"
+description = "Quickly insert placeholder sentences or paragraphs into your active document."
+languages = ["*"]
+
+[capabilities]
+outline_provider = false
+commands = [
+    "lorem_sentence",
+    "lorem_paragraph",
+    "lorem_paragraphs_3"
+]

@@ -1,0 +1,17 @@
+id = "case-converter"
+name = "Case Converter"
+version = "0.1.0"
+type = "lua"
+entry = "init.lua"
+author = "kh813"
+description = "Convert words and text selections between camelCase, snake_case, kebab-case, and CONSTANT_CASE."
+languages = ["*"]
+
+[capabilities]
+outline_provider = false
+commands = [
+    "to_camel_case",
+    "to_snake_case",
+    "to_kebab_case",
+    "to_constant_case"
+]

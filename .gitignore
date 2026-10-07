@@ -1,0 +1,10 @@
+# Build artifacts
+target/
+*.pyc
+__pycache__/
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp

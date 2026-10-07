@@ -1,0 +1,14 @@
+id = "markdown-toc"
+name = "Markdown Table of Contents"
+version = "0.1.0"
+type = "lua"
+entry = "init.lua"
+author = "kh813"
+description = "Automatically generates and inserts an indented Table of Contents from Markdown headings (# to ######)."
+languages = ["markdown", "md"]
+
+[capabilities]
+outline_provider = false
+commands = [
+    "generate_toc"
+]
