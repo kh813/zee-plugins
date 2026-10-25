@@ -1,7 +1,32 @@
 {
   "version": 1,
-  "updated_at": "2026-10-07T04:00:00Z",
+  "updated_at": "2026-10-25T00:00:00Z",
   "plugins": [
+    {
+      "id": "git-easy",
+      "name": "Git Easy",
+      "version": "20261025.1",
+      "type": "lua",
+      "author": "hiroshi",
+      "description": "Simple, personal Git version control for Markdown documents and skills without complex Git commands.",
+      "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/git-easy",
+      "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/git-easy",
+      "languages": ["*"],
+      "capabilities": {
+        "outline_provider": false,
+        "commands": [
+          "git_easy_snapshot",
+          "git_easy_new_draft",
+          "git_easy_merge_draft",
+          "git_easy_switch_draft",
+          "git_easy_restore_latest",
+          "git_easy_add_file",
+          "git_easy_ignore_file",
+          "git_easy_history",
+          "git_easy_status"
+        ]
+      }
+    },
     {
       "id": "case-converter",
       "name": "Case Converter",

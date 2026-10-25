@@ -1,0 +1,22 @@
+id = "git-easy"
+name = "Git Easy"
+version = "20261025.1"
+type = "lua"
+entry = "init.lua"
+author = "hiroshi"
+description = "Simple, personal Git version control for Markdown documents and skills without complex Git commands."
+languages = ["*"]
+
+[capabilities]
+outline_provider = false
+commands = [
+    "git_easy_snapshot",
+    "git_easy_new_draft",
+    "git_easy_merge_draft",
+    "git_easy_switch_draft",
+    "git_easy_restore_latest",
+    "git_easy_add_file",
+    "git_easy_ignore_file",
+    "git_easy_history",
+    "git_easy_status"
+]
