@@ -4,11 +4,11 @@
   "plugins": [
     {
       "id": "git-easy",
-      "name": "Git Easy",
-      "version": "20261025.2",
+      "name": "Git Easy (Experimental)",
+      "version": "20261025.3",
       "type": "lua",
       "author": "hiroshi",
-      "description": "Simple, personal Git version control for Markdown documents and skills without complex Git commands.",
+      "description": "[Experimental] Simple, personal Git version control for Markdown documents and skills without complex Git commands.",
       "homepage": "https://github.com/kh813/zee-plugins/tree/main/plugins/git-easy",
       "download_url": "https://raw.githubusercontent.com/kh813/zee-plugins/main/plugins/git-easy",
       "languages": ["*"],

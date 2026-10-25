@@ -1,10 +1,10 @@
 id = "git-easy"
-name = "Git Easy"
-version = "20261025.2"
+name = "Git Easy (Experimental)"
+version = "20261025.3"
 type = "lua"
 entry = "init.lua"
 author = "hiroshi"
-description = "Simple, personal Git version control for Markdown documents and skills without complex Git commands."
+description = "[Experimental] Simple, personal Git version control for Markdown documents and skills without complex Git commands."
 languages = ["*"]
 
 [capabilities]
