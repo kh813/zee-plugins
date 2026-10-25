@@ -1,6 +1,7 @@
 id = "git-easy"
-name = "Git Easy (Experimental)"
-version = "20261025.3"
+name = "Git Easy"
+version = "20261025.4"
+experimental = true
 type = "lua"
 entry = "init.lua"
 author = "hiroshi"

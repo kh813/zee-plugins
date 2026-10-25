@@ -4,8 +4,9 @@
   "plugins": [
     {
       "id": "git-easy",
-      "name": "Git Easy (Experimental)",
-      "version": "20261025.3",
+      "name": "Git Easy",
+      "version": "20261025.4",
+      "experimental": true,
       "type": "lua",
       "author": "hiroshi",
       "description": "[Experimental] Simple, personal Git version control for Markdown documents and skills without complex Git commands.",
