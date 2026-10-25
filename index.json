@@ -5,7 +5,7 @@
     {
       "id": "git-easy",
       "name": "Git Easy",
-      "version": "20261025.1",
+      "version": "20261025.2",
       "type": "lua",
       "author": "hiroshi",
       "description": "Simple, personal Git version control for Markdown documents and skills without complex Git commands.",
@@ -22,6 +22,7 @@
           "git_easy_restore_latest",
           "git_easy_add_file",
           "git_easy_ignore_file",
+          "git_easy_unignore_file",
           "git_easy_history",
           "git_easy_status"
         ]

@@ -93,8 +93,22 @@ node_modules/
 -- Shell & Git Utilities
 -- ---------------------------------------------------------------------------
 
+local function get_workspace_root()
+    local ws = os.getenv("ZEE_WORKSPACE_ROOT")
+    if ws and ws ~= "" then
+        return ws
+    end
+    return nil
+end
+
 local function git_exec(cmd_str)
-    local cmd = "git " .. cmd_str .. " 2>&1"
+    local ws = get_workspace_root()
+    local cmd
+    if ws and ws ~= "" then
+        cmd = string.format('git -C "%s" %s 2>&1', ws:gsub('"', '\\"'), cmd_str)
+    else
+        cmd = "git " .. cmd_str .. " 2>&1"
+    end
     local handle = io.popen(cmd)
     if not handle then
         return nil, "Failed to execute git process"
@@ -112,6 +126,10 @@ local function is_git_installed()
 end
 
 local function get_repo_root()
+    local ws = get_workspace_root()
+    if ws and ws ~= "" then
+        return ws
+    end
     local root, ok = git_exec("rev-parse --show-toplevel")
     if ok and root and root ~= "" then
         return root
@@ -644,6 +662,47 @@ function M.ignore_file(content, target_file)
     return content
 end
 
+-- 9b. Remove File from .gitignore (Unignore)
+function M.unignore_file(content, target_file)
+    ensure_git_repo()
+
+    local file_to_unignore = target_file
+    if not file_to_unignore or file_to_unignore == "" then
+        if #content > 0 and #content <= 200 and not content:find("\n") then
+            file_to_unignore = content:gsub("^%s+", ""):gsub("%s+$", "")
+        end
+    end
+
+    if not file_to_unignore or file_to_unignore == "" then
+        return content
+    end
+
+    local root = get_repo_root()
+    local gitignore_path = root .. "/.gitignore"
+    local rf = io.open(gitignore_path, "r")
+    if not rf then
+        return content
+    end
+
+    local lines = {}
+    local clean_name = file_to_unignore:gsub("^%./", "")
+    for line in rf:lines() do
+        local trimmed = line:gsub("^%s+", ""):gsub("%s+$", "")
+        if trimmed ~= clean_name and trimmed ~= ("/" .. clean_name) then
+            table.insert(lines, line)
+        end
+    end
+    rf:close()
+
+    local wf = io.open(gitignore_path, "w")
+    if wf then
+        wf:write(table.concat(lines, "\n") .. "\n")
+        wf:close()
+    end
+
+    return content
+end
+
 -- 10. Inspect File Version State (Helper for UI & right-click menu)
 -- Returns: "untracked" | "modified" | "clean" | "ignored"
 function M.get_file_state(filepath)
@@ -696,6 +755,8 @@ function M.execute_command(command, content)
         return M.add_file(content)
     elseif command == "git_easy_ignore_file" then
         return M.ignore_file(content)
+    elseif command == "git_easy_unignore_file" then
+        return M.unignore_file(content)
     else
         return content
     end
